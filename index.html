@@ -1,0 +1,36 @@
+<!doctype HTML>
+<html>
+  <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.js"></script>
+  <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded artoolkit = 'sourceType:webcam;' arjs='debugUIEnabled:false'>
+	<a-assets>
+  	<img id="img1" src="./images/image0.jpg"></img>
+	<img id="img2" src="./images/image1.jpg"></img>
+	<img id="img3" src="./images/image2.jpg"></img>
+  	<img id="img4" src="./images/image3.jpg"></img>
+	<img id="img5" src="./images/image4.jpg"></img>
+	<img id="img6" src="./images/image5.jpg"></img>
+  	<img id="img7" src="./images/image6.jpg"></img>
+	<img id="img8" src="./images/image7.jpg"></img>
+	<img id="img9" src="./images/image8.jpg"></img>
+	</a-assets>
+      	<a-marker preset="hiro">
+		<a-box material="opacity: 0" position="0 0.5 0" rotation="180 0 0">
+        	<a-sphere material="opacity: 0" animation="property: rotation; to:0 0 360; dur: 9000; easing: linear; loop: true">
+	          		<a-box position="0 2 0" scale="1 0.001 1" src="#img8"></a-box>
+				<a-box position="0 -2 0" scale="1 0.001 1" src="#img1"></a-box>
+				<a-box position="2 0 0" scale="1 0.001 1" rotation="0 0 90" src="#img2"></a-box>
+				<a-box position="-2 0 0" scale="1 0.001 1" rotation="0 0 90" src="#img3"></a-box>
+				<a-box position="1.5 -1.5 0" scale="1 0.001 1" rotation="0 0 45" src="#img4"></a-box>
+				<a-box position="1.5 1.5 0" scale="1 0.001 1" rotation="0 0 -45" src="#img5"></a-box>
+				<a-box position="-1.5 1.5 0" scale="1 0.001 1" rotation="0 0 45" src="#img6"></a-box>
+				<a-box position="-1.5 -1.5 0" scale="1 0.001 1" rotation="0 0 -45" src="#img7"></a-box>
+	        </a-sphere>
+		</a-box>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
